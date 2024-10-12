@@ -1,0 +1,161 @@
+/* Global Styling  */
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Poppins', sans-serif;
+   line-height: 1.6;
+}
+
+section {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 40px;
+   color: #333;
+   padding-top: 100px;
+}
+
+/* Navbar Styling */
+.navbar {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   background-color: transparent;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 30px;
+   z-index: 1000;
+   transition: background-color 0.5s ease, color 0.5s ease;
+   color: #333;
+}
+
+.navbar.scrolled {
+   background-color: #333;
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+   color: #fff;
+}
+
+.nav-links a {
+   color: #333;
+   transition: color 0.3s ease;
+}
+
+.navbar.scrolled .nav-links a {
+   color: #fff;
+}
+
+.nav-links {
+   list-style: none;
+   display: flex;
+   align-items: center;
+}
+
+.nav-links li {
+   margin-left: 20px;
+}
+
+.nav-item {
+   color: #fff;
+   text-decoration: none;
+   font-size: 18px;
+   padding: 10px 15px;
+   transition: color 0.3s ease;
+}
+
+.nav-item:hover,
+.navbar.scrolled .nav-links a:hover {
+   color: #ff6b6b;
+}
+
+.social-icons a {
+   color: #333;
+   margin-left: 10px;
+   font-size: 18px;
+   transition: color 0.3s ease;
+}
+
+.social-icons a:hover,
+.navbar.scrolled .social-icons a:hover {
+   color: #ff6b6b;
+}
+
+.hamburger {
+   display: none;
+   color: #333;
+   font-size: 28px;
+   cursor: pointer;
+   transition: color 0.3s ease;
+}
+
+.navbar.scrolled .hamburger {
+   color: #fff;
+}
+
+/* Sections Styling  */
+#home {
+   background-color: #f4f4f4;
+}
+
+#services {
+   background-color: #eaeaea;
+}
+
+#about {
+   background-color: #dedede;
+}
+
+#contact {
+   background-color: #ccc;
+}
+
+/* Mobile View  */
+@media (max-width: 768px) {
+   h1 {
+      font-size: 32px;
+   }
+
+   .hamburger {
+      display: block;
+   }
+
+   .nav-links {
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #333;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+   }
+
+   .nav-links li {
+      margin: 10px 0;
+   }
+
+   .navbar.active .nav-links {
+      transform: translateX(0);
+   }
+
+   .navbar.active {
+      background-color: #333;
+   }
+
+   .navbar.active .nav-links a,
+   .navbar.active .social-icons a {
+      color: #fff;
+   }
+
+   .navbar.active .nav-links a:hover,
+   .navbar.active .social-icons a:hover {
+      color: #ff6b6b;
+   }
+
+}
